@@ -1,12 +1,11 @@
 'use client'
 
 import React from 'react'
-import './MainAnimation.css'
 
 export default function MainAnimation () {
   React.useEffect(() => {
     var canvas = document.querySelector('#scene'),
-      ctx = canvas.getContext('2d'),
+      ctx = canvas.getContext('2d', { willReadFrequently: true }),
       particles = [],
       amount = 0,
       mouse = { x: 0, y: 0 },
@@ -124,7 +123,7 @@ export default function MainAnimation () {
 
   return (
     <>
-      <canvas id='scene'></canvas>
+      <canvas id='scene' className='fixed bg-transparent'></canvas>
     </>
   )
 }

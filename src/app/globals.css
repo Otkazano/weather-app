@@ -7,15 +7,3 @@
   margin: 0;
   padding: 0;
 }
-
-body {
-  background: linear-gradient(249deg, #f0b5ce 0%, #8c6bae 100%);
-  display: flex;
-  min-height: 100dvh;
-  overflow-x: hidden;
-}
-
-main {
-  display: flex;
-  flex-grow: 1;
-}
