@@ -1,4 +1,5 @@
 import AboutProject from '@/components/AboutProject/AboutProject'
+import Button from '@/components/Button/Button'
 import MainAnimation from '@/components/MainAnimation/MainAnimation'
 
 export default function Home () {
@@ -7,6 +8,7 @@ export default function Home () {
       <main className='flex flex-col grow'>
         <MainAnimation />
         <AboutProject />
+        <Button />
       </main>
     </>
   )
