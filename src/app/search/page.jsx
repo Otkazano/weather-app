@@ -1,15 +1,10 @@
-import Link from 'next/link'
+import BreadCrumbs from '@/components/BreadCrumbs/BreadCrumbs'
 
 export default function SearchPage () {
   return (
-    <>
-      <h1 className='mt-auto text-center p-2 text-2xl'>Секция дополняется</h1>
-      <Link
-        href='/'
-        className='mx-auto mb-auto p-2 text-center border w-fit hover:opacity-50'
-      >
-        Вернуться на домашнюю страницу
-      </Link>
-    </>
+    <main className='flex flex-col grow max-w-[1440px] mx-auto w-full'>
+      <BreadCrumbs />
+      <h1 className='m-auto text-center p-2 text-2xl'>Секция дополняется</h1>
+    </main>
   )
 }

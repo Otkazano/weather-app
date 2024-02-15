@@ -4,12 +4,10 @@ import MainAnimation from '@/components/MainAnimation/MainAnimation'
 
 export default function Home () {
   return (
-    <>
-      <main className='flex flex-col grow'>
-        <MainAnimation />
-        <AboutProject />
-        <Button />
-      </main>
-    </>
+    <main className='flex flex-col grow'>
+      <MainAnimation />
+      <AboutProject />
+      <Button link={'/search'} text={'Скорее начать!'} />
+    </main>
   )
 }
