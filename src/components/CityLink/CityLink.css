@@ -1,0 +1,11 @@
+.cityLink-box::-webkit-scrollbar {
+  background-color: transparent;
+  width: 5px;
+}
+
+.cityLink-box::-webkit-scrollbar-thumb {
+  background-color: rgb(128, 128, 128, .3);
+  border-radius: 50px;
+  border: 1px solid rgb(128, 128, 128, .2);
+}
+
