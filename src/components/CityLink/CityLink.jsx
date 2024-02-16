@@ -11,10 +11,9 @@ export default function CityLink ({ firstLetter }) {
     <ul className='cityLink-box h-60 overflow-y-scroll '>
       {showList.map(city => {
         return (
-          <li>
+          <li key={Math.random()}>
             <Link
               href={`/search/${city}`}
-              key={Math.random()}
               className='drop-shadow-lg p-1 font-light opacity-80 hover:opacity-100'
             >
               {city}

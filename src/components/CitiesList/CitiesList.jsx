@@ -12,11 +12,8 @@ export default function CitiesList () {
       <ul className='w-full grid grid-cols-[repeat(auto-fit,_200px)] gap-10 justify-center '>
         {alphabet.map(letter => {
           return (
-            <li>
-              <h3
-                key={Math.random()}
-                className='citiesList__letter mb-1 drop-shadow-lg text-lg font-semibold'
-              >
+            <li key={Math.random()}>
+              <h3 className='citiesList__letter mb-1 drop-shadow-lg text-lg font-semibold'>
                 {letter.toUpperCase()}
               </h3>
               <CityLink firstLetter={letter} />
