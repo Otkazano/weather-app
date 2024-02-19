@@ -1,3 +1,5 @@
+'use client'
+
 import alphabet from '@/utils/alphabet'
 import CityLink from '../CityLink/CityLink'
 
@@ -7,7 +9,7 @@ export default function CitiesList () {
   return (
     <section className='w-full p-5'>
       <h2 className='m-auto text-center p-4 text-2xl drop-shadow-lg text-3xl font-semibold'>
-        Либо выбери свой город из списка
+        Либо выбери его из списка ниже
       </h2>
       <ul className='w-full grid grid-cols-[repeat(auto-fit,_200px)] gap-10 justify-center '>
         {alphabet.map(letter => {

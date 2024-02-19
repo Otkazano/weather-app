@@ -17,13 +17,13 @@ export default function BreadCrumbs () {
           return
         } else {
           return (
-            <div key={Math.random()} className='flex gap-3 opacity-70 hover:opacity-100 last:opacity-100'>
+            <div
+              key={Math.random()}
+              className='flex gap-3 opacity-70 hover:opacity-100 last:opacity-100'
+            >
               <p> &gt; </p>
-              <Link
-                href={`/${page}`}
-                className='relative '
-              >
-                {page === 'search' ? 'Страница поиска' : page}
+              <Link href={`/${page}`} className='relative '>
+                {page === 'search' ? 'Страница поиска' : decodeURI(page)}
               </Link>
             </div>
           )
