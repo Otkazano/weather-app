@@ -6,8 +6,10 @@ import SearchInput from '@/components/SearchInput/SearchInput'
 export default function SearchPage () {
   return (
     <main className='flex flex-col text-white grow max-w-[1440px] mx-auto w-full'>
-      <BreadCrumbs /> 
-      <CurrentLocation />
+      <section className='flex justify-between'>
+        <BreadCrumbs />
+        {/* <CurrentLocation /> */}
+      </section>
       <SearchInput />
       <CitiesList />
     </main>
