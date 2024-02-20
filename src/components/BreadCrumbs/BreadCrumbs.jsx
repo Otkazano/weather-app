@@ -22,7 +22,7 @@ export default function BreadCrumbs () {
               className='flex gap-3 opacity-70 hover:opacity-100 last:opacity-100'
             >
               <p> &gt; </p>
-              <Link href={`/${page}`} className='relative '>
+              <Link href={`/${page}`} className='relative z-10'>
                 {page === 'search' ? 'Страница поиска' : decodeURI(page)}
               </Link>
             </div>
