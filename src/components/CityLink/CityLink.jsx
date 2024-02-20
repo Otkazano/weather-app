@@ -1,5 +1,3 @@
-'use client'
-
 import russia from '@/utils/russia'
 import sortArr from '@/utils/sortArr'
 import Link from 'next/link'
@@ -15,7 +13,7 @@ export default function CityLink ({ firstLetter }) {
         return (
           <li key={Math.random()}>
             <Link
-              href={`/search/${city}`}
+              href={`/search/${encodeURI(city)}`}
               className='drop-shadow-lg p-1 font-light opacity-80 hover:opacity-100'
             >
               {city}
