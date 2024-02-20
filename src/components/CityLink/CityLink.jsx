@@ -1,3 +1,5 @@
+'use client'
+
 import russia from '@/utils/russia'
 import sortArr from '@/utils/sortArr'
 import Link from 'next/link'
