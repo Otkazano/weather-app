@@ -12,6 +12,6 @@ export async function getCurrentLocation (ipAddress) {
     )
     return response.data
   } catch (error) {
-    return error
+    throw new Error(error)
   }
 }

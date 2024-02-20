@@ -2,6 +2,7 @@
 
 import BreadCrumbs from '@/components/BreadCrumbs/BreadCrumbs'
 import { getWeatherData } from '@/services/getWeatherData'
+import fromFtoC from '@/utils/fromFtoC'
 import { useParams } from 'next/navigation'
 import React from 'react'
 
@@ -13,10 +14,8 @@ export default function CityNamePage () {
     getWeatherData(decodeURI(pathName.cityName))
       .then(res => {
         setWeatherData(res)
-        console.log(res)
       })
       .catch(err => console.log(err))
-      .finally()
   }, [])
 
   return (

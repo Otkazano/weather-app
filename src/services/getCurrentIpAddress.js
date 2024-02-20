@@ -5,6 +5,6 @@ export async function getCurrentIpAddress () {
     const response = await axios.get(`https://ipapi.co/json/`)
     return response.data
   } catch (error) {
-    return error
+    throw new Error(error)
   }
 }

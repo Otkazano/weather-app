@@ -12,6 +12,6 @@ export async function getWeatherData (cityName) {
     )
     return response.data
   } catch (error) {
-    return error
+    throw new Error(error.response.status)
   }
 }

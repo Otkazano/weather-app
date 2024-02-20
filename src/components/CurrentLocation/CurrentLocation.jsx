@@ -13,7 +13,6 @@ export default function CurrentLocation () {
     getCurrentIpAddress()
       .then(res => {
         setIpAddress(res)
-        console.log(res)
       })
       .catch(err => {
         console.log(err)
@@ -28,7 +27,6 @@ export default function CurrentLocation () {
         } else {
           setCurrentCity(ipAddress.city)
         }
-        console.log(res)
       })
       .catch(err => {
         console.log(err)
