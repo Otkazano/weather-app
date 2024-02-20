@@ -5,13 +5,14 @@ import { getCurrentLocation } from '@/services/getCurrentLocation'
 import React from 'react'
 
 export default function CurrentLocation () {
-  const [ipAddress, setIpAddress] = React.useState('')
+  const [ipAddress, setIpAddress] = React.useState({})
   const [currentCity, setCurrentCity] = React.useState('не удалось определить')
 
   React.useEffect(() => {
     getCurrentIpAddress()
       .then(res => {
-        setIpAddress(res.ip)
+        setIpAddress(res)
+        console.log(res)
       })
       .catch(err => {
         console.log(err)
@@ -19,11 +20,14 @@ export default function CurrentLocation () {
   }, [])
 
   React.useEffect(() => {
-    getCurrentLocation(ipAddress)
+    getCurrentLocation(ipAddress.ip)
       .then(res => {
         if (res.location !== null) {
           setCurrentCity(res.location)
+        } else {
+          setCurrentCity(ipAddress.city)
         }
+        console.log(res)
       })
       .catch(err => {
         console.log(err)
