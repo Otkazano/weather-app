@@ -1,3 +1,5 @@
+'use client'
+
 import alphabet from '@/utils/alphabet'
 import CityLink from '../CityLink/CityLink'
 

@@ -21,10 +21,10 @@ export default function BreadCrumbs () {
           return (
             <div
               key={Math.random()}
-              className='flex gap-3 opacity-70 hover:opacity-100 last:opacity-100'
+              className='flex gap-3'
             >
-              <p> &gt; </p>
-              <Link href={`/${page}`} className='relative'>
+              <p className='opacity-70'> &gt; </p>
+              <Link href={`/${page}`} className='relative opacity-70 hover:opacity-100 '>
                 {page === 'search' ? 'Страница поиска' : decodeURI(page)}
               </Link>
             </div>
