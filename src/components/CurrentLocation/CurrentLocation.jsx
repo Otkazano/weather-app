@@ -38,13 +38,17 @@ export default function CurrentLocation () {
   return (
     <div className='p-5 text-white drop-shadow-lg text-l flex'>
       <p className='opacity-70'>Текущая локация: &nbsp;</p>
-      <button
-        type='button'
-        onClick={() => router.push(`/search/${currentCity}`)}
-        className='relative opacity-70 hover:opacity-100 '
-      >
-        {currentCity}
-      </button>
+      {currentCity === 'не удалось определить' ? (
+        <p className='opacity-70'>не удалось определить</p>
+      ) : (
+        <button
+          type='button'
+          onClick={() => router.push(`/search/${currentCity}`)}
+          className='relative opacity-70 hover:opacity-100 underline'
+        >
+          {currentCity}
+        </button>
+      )}
     </div>
   )
 }
