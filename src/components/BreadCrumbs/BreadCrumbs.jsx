@@ -12,10 +12,13 @@ export default function BreadCrumbs () {
       <Link href={'/'} className='relative opacity-70 hover:opacity-100'>
         Домашнаяя страница
       </Link>
-
       {pages.map(page => {
         if (page === '') {
-          return <p className='opacity-70'> &gt; </p>
+          return (
+            <p key={Math.random()} className='opacity-70'>
+              &gt;
+            </p>
+          )
         } else {
           return (
             <div key={Math.random()} className='flex gap-3'>
