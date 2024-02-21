@@ -9,22 +9,20 @@ export default function BreadCrumbs () {
 
   return (
     <div className='flex gap-3 p-5 text-white drop-shadow-lg text-l'>
-      <div>
-        <Link href={'/'} className='relative opacity-70 hover:opacity-100'>
-          Домашнаяя страница
-        </Link>
-      </div>
+      <Link href={'/'} className='relative opacity-70 hover:opacity-100'>
+        Домашнаяя страница
+      </Link>
+
       {pages.map(page => {
         if (page === '') {
-          return
+          return <p className='opacity-70'> &gt; </p>
         } else {
           return (
-            <div
-              key={Math.random()}
-              className='flex gap-3'
-            >
-              <p className='opacity-70'> &gt; </p>
-              <Link href={`/${page}`} className='relative opacity-70 hover:opacity-100 '>
+            <div key={Math.random()} className='flex gap-3'>
+              <Link
+                href={`/${page}`}
+                className='relative opacity-70 hover:opacity-100 '
+              >
                 {page === 'search' ? 'Страница поиска' : decodeURI(page)}
               </Link>
             </div>
