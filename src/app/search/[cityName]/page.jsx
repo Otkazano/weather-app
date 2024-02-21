@@ -3,12 +3,11 @@
 import BreadCrumbs from '@/components/BreadCrumbs/BreadCrumbs'
 import { getWeatherData } from '@/services/getWeatherData'
 import fromFtoC from '@/utils/fromFtoC'
-import { usePathname, useParams } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import React from 'react'
 
 export default function CityNamePage () {
   const [weatherData, setWeatherData] = React.useState({})
-  const pathName = usePathname()
   const params = useParams()
 
   React.useEffect(() => {

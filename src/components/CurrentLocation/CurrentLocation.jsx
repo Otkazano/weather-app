@@ -2,10 +2,11 @@
 
 import { getCurrentIpAddress } from '@/services/getCurrentIpAddress'
 import { getCurrentLocation } from '@/services/getCurrentLocation'
-import Link from 'next/link'
 import React from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function CurrentLocation () {
+  const router = useRouter()
   const [ipAddress, setIpAddress] = React.useState({})
   const [currentCity, setCurrentCity] = React.useState('не удалось определить')
 
@@ -37,12 +38,13 @@ export default function CurrentLocation () {
   return (
     <div className='p-5 text-white drop-shadow-lg text-l flex'>
       <p className='opacity-70'>Текущая локация: &nbsp;</p>
-      <Link
-        href={`/search/${currentCity}`}
-        className='relative opacity-70 hover:opacity-100'
+      <button
+        type='button'
+        onClick={() => router.push(`/search/${currentCity}`)}
+        className='relative opacity-70 hover:opacity-100 '
       >
         {currentCity}
-      </Link>
+      </button>
     </div>
   )
 }
