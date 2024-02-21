@@ -17,9 +17,6 @@ export default function CityNamePage () {
         setWeatherData(res)
       })
       .catch(err => console.log(err))
-
-    console.log(pathName)
-    console.log(params)
   }, [])
 
   return (

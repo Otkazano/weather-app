@@ -11,7 +11,7 @@ export default function CitiesList () {
       <h2 className='m-auto text-center p-4 text-2xl drop-shadow-lg text-3xl font-semibold'>
         Либо выбери его из списка ниже
       </h2>
-      <ul className='w-full grid grid-cols-[repeat(auto-fit,_200px)] gap-10 justify-center '>
+      <ul className='w-full grid grid-cols-[repeat(auto-fit,_200px)] gap-10 justify-center'>
         {alphabet.map(letter => {
           return (
             <li key={Math.random()}>
