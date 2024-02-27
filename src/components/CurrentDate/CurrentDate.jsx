@@ -1,6 +1,6 @@
 'use client'
 
-import getCurrentTime from '@/services/getCurrentTime'
+import { getCurrentTime } from '@/services/getCurrentTime'
 import React from 'react'
 
 export default function CurrentDate ({ data }) {
