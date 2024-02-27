@@ -1,3 +1,4 @@
+import CurrentDate from '../CurrentDate/CurrentDate'
 import WeatherIcon from '../WeatherIcon/WeatherIcon'
 
 export default function CurrentWeather ({ weatherData }) {
@@ -12,6 +13,7 @@ export default function CurrentWeather ({ weatherData }) {
         </h1>
         <p className='text-3xl p-2.5 tracking-tight drop-shadow-lg'>° C </p>
       </div>
+      <CurrentDate data={weatherData} />
     </section>
   )
 }
