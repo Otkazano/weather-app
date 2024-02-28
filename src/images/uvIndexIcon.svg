@@ -1,0 +1,10 @@
+<svg height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+<!-- <path d="m13 30h-4a2.0027 2.0027 0 0 1 -2-2v-8h2v8h4v-8h2v8a2.0027 2.0027 0 0 1 -2 2z" fill='white'/> -->
+<!-- <path d="m25 20h-1.75l-2.25 9.031-2.208-9.031h-1.792l2.5 10h3z" fill='white'/> -->
+<path d="m15 2h2v5h-2z" fill='white'/>
+<path d="m21.6675 6.8536h4.958v1.9998h-4.958z" transform="matrix(.70710678 -.70710678 .70710678 .70710678 1.5191 19.3744)" fill='white'/>
+<path d="m25 15h5v2h-5z" fill='white'/>
+<path d="m2 15h5v2h-5z" fill='white'/>
+<path d="m6.8536 5.3745h1.9998v4.958h-1.9998z" transform="matrix(.70710678 -.70710678 .70710678 .70710678 -3.253 7.8535)" fill='white'/>
+<path d="m22 17h-2v-1a4 4 0 0 0 -8 0v1h-2v-1a6 6 0 0 1 12 0z" fill='white'/>
+<path d="m0 0h32v32h-32z" fill="none"/></svg>

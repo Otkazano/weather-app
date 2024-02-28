@@ -7,3 +7,13 @@
   margin: 0;
   padding: 0;
 }
+
+.main__line::after {
+  content: ' ';
+  background: white;
+  width: 1px;
+  height: 18px;
+  top: 7px;
+  left: calc(100% + 24px);
+  position: absolute;
+}

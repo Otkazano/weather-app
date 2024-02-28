@@ -18,8 +18,14 @@ import showersnight from '@/images/showers-night.svg'
 import sleet from '@/images/sleet.svg'
 import snowshowersday from '@/images/snow-showers-day.svg'
 import clouderror from '@/images/cloud-error.svg'
+import snow from '@/images/snow.svg'
+import thunderrain from '@/images/thunder-rain.svg'
+import thundershowersday from '@/images/thunder-showers-day.svg'
+import thundershowersnight from '@/images/thunder-showers-night.svg'
+import thunder from '@/images/thunder.svg'
+import wind from '@/images/wind.svg'
 
-export default function WeatherIcon ({ data, classList}) {
+export default function WeatherIcon ({ data, classList }) {
   const [path, setPath] = React.useState(clouderror)
   React.useEffect(() => {
     if (data.currentConditions) {
@@ -38,13 +44,25 @@ export default function WeatherIcon ({ data, classList}) {
       {data.currentConditions.icon === 'showers-night' ? setPath(showersnight) : ''}
       {data.currentConditions.icon === 'sleet' ? setPath(sleet) : ''}
       {data.currentConditions.icon === 'snow-showers-day' ? setPath(snowshowersday) : ''}
+      {data.currentConditions.icon === 'snow' ? setPath(snow) : ''}
+      {data.currentConditions.icon === 'thunder-rain' ? setPath(thunderrain) : ''}
+      {data.currentConditions.icon === 'thunder-showers-day' ? setPath(thundershowersday) : ''}
+      {data.currentConditions.icon === 'thunder-showers-night' ? setPath(thundershowersnight) : ''}
+      {data.currentConditions.icon === 'thunder' ? setPath(thunder) : ''}
+      {data.currentConditions.icon === 'wind' ? setPath(wind) : ''}
     }
-    
   }, [data])
 
   return (
     <>
-      <Image src={path} alt='Иконка погоды' width={'auto'} height={'auto'} priority className={classList}/>
+      <Image
+        src={path}
+        alt='Иконка погоды'
+        width={'auto'}
+        height={'auto'}
+        priority
+        className={classList}
+      />
     </>
   )
 }
