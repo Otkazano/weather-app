@@ -12,7 +12,7 @@ export default function CityNamePage () {
   const params = useParams()
 
   React.useEffect(() => {
-    getCurrentWeatherData(decodeURI(params.cityName))
+    getWeatherData(decodeURI(params.cityName))
       .then(res => {
         setWeatherData(res)
         console.log(res)

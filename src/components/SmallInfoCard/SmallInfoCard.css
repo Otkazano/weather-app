@@ -2,7 +2,8 @@
   min-width: 70px;
   height: 130px;
   border-radius: 11.385px;
-  border: 0.569px solid var(--radial-suhu, #fff);
+  border: 0.569px solid;
+  border-color: rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.2);
   filter: blur(0.3px);
   display: flex;
@@ -12,7 +13,6 @@
   padding: 3px;
   color: #fff;
   box-sizing: content-box;
-
 }
 
 .smallInfoCard__tempInfo {

@@ -1,0 +1,27 @@
+.cardsList__box {
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.cardsList__box::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.cardsList__button {
+  font-size: 40px;
+  opacity: 0.5;
+  width: 30px;
+  height: 130px;
+  border-radius: 11.385px;
+  background: rgba(255, 255, 255, 0.1);
+  filter: blur(0.5px);
+  padding: 3px;
+  box-sizing: content-box;
+  z-index: 10;
+}
+
+.cardsList__button:hover {
+  opacity: 1;
+}
