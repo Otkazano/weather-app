@@ -16,7 +16,7 @@
   height: 130px;
   border-radius: 11.385px;
   background: rgba(255, 255, 255, 0.1);
-  filter: blur(0.5px);
+  backdrop-filter: blur(50px);
   padding: 3px;
   box-sizing: content-box;
   z-index: 10;
