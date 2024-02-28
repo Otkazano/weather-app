@@ -1,8 +1,9 @@
 'use client'
 
 import BreadCrumbs from '@/components/BreadCrumbs/BreadCrumbs'
+import CardsList from '@/components/CardsList/CardsList'
 import CurrentWeather from '@/components/CurrentWeather/CurrentWeather'
-import { getCurrentWeatherData } from '@/services/getWeatherData'
+import { getCurrentWeatherData, getWeatherData } from '@/services/getWeatherData'
 import { useParams } from 'next/navigation'
 import React from 'react'
 
@@ -23,6 +24,7 @@ export default function CityNamePage () {
     <main className='flex flex-col grow max-w-[1440px] mx-auto w-full'>
       <BreadCrumbs />
       <CurrentWeather weatherData={weatherData} />
+      <CardsList weatherData={weatherData} />
     </main>
   )
 }

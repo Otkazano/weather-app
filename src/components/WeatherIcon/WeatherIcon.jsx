@@ -28,28 +28,28 @@ import wind from '@/images/wind.svg'
 export default function WeatherIcon ({ data, classList }) {
   const [path, setPath] = React.useState(clouderror)
   React.useEffect(() => {
-    if (data.currentConditions) {
-      {data.currentConditions.icon === 'clear-day' ? setPath(clearday) : ''}
-      {data.currentConditions.icon === 'clear-night' ? setPath(clearnight) : ''}
-      {data.currentConditions.icon === 'cloudy' ? setPath(cloudy) : ''}
-      {data.currentConditions.icon === 'fog' ? setPath(fog) : ''}
-      {data.currentConditions.icon === 'hail' ? setPath(hail) : ''}
-      {data.currentConditions.icon === 'partly-cloudy-day' ? setPath(partlycloudyday) : ''}
-      {data.currentConditions.icon === 'partly-cloudy-night' ? setPath(partlycloudynight) : ''}
-      {data.currentConditions.icon === 'rain-snow-showers-day' ? setPath(rainsnowshowersday) : ''}
-      {data.currentConditions.icon === 'rain-snow-showers-night' ? setPath(rainsnowshowersnight) : ''}
-      {data.currentConditions.icon === 'rain' ? setPath(rain) : ''}
-      {data.currentConditions.icon === 'rain-snow' ? setPath(rainsnow) : ''}
-      {data.currentConditions.icon === 'showers-day' ? setPath(showersday) : ''}
-      {data.currentConditions.icon === 'showers-night' ? setPath(showersnight) : ''}
-      {data.currentConditions.icon === 'sleet' ? setPath(sleet) : ''}
-      {data.currentConditions.icon === 'snow-showers-day' ? setPath(snowshowersday) : ''}
-      {data.currentConditions.icon === 'snow' ? setPath(snow) : ''}
-      {data.currentConditions.icon === 'thunder-rain' ? setPath(thunderrain) : ''}
-      {data.currentConditions.icon === 'thunder-showers-day' ? setPath(thundershowersday) : ''}
-      {data.currentConditions.icon === 'thunder-showers-night' ? setPath(thundershowersnight) : ''}
-      {data.currentConditions.icon === 'thunder' ? setPath(thunder) : ''}
-      {data.currentConditions.icon === 'wind' ? setPath(wind) : ''}
+    if (data.icon) {
+      {data.icon === 'clear-day' ? setPath(clearday) : ''}
+      {data.icon === 'clear-night' ? setPath(clearnight) : ''}
+      {data.icon === 'cloudy' ? setPath(cloudy) : ''}
+      {data.icon === 'fog' ? setPath(fog) : ''}
+      {data.icon === 'hail' ? setPath(hail) : ''}
+      {data.icon === 'partly-cloudy-day' ? setPath(partlycloudyday) : ''}
+      {data.icon === 'partly-cloudy-night' ? setPath(partlycloudynight) : ''}
+      {data.icon === 'rain-snow-showers-day' ? setPath(rainsnowshowersday) : ''}
+      {data.icon === 'rain-snow-showers-night' ? setPath(rainsnowshowersnight) : ''}
+      {data.icon === 'rain' ? setPath(rain) : ''}
+      {data.icon === 'rain-snow' ? setPath(rainsnow) : ''}
+      {data.icon === 'showers-day' ? setPath(showersday) : ''}
+      {data.icon === 'showers-night' ? setPath(showersnight) : ''}
+      {data.icon === 'sleet' ? setPath(sleet) : ''}
+      {data.icon === 'snow-showers-day' ? setPath(snowshowersday) : ''}
+      {data.icon === 'snow' ? setPath(snow) : ''}
+      {data.icon === 'thunder-rain' ? setPath(thunderrain) : ''}
+      {data.icon === 'thunder-showers-day' ? setPath(thundershowersday) : ''}
+      {data.icon === 'thunder-showers-night' ? setPath(thundershowersnight) : ''}
+      {data.icon === 'thunder' ? setPath(thunder) : ''}
+      {data.icon === 'wind' ? setPath(wind) : ''}
     }
   }, [data])
 
