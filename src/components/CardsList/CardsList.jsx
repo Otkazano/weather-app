@@ -24,7 +24,7 @@ export default function CardsList ({ weatherData }) {
         &#8249;
       </button>
       <div
-        className='cardsList__box flex gap-8 overflow-x-scroll max-w-3xl'
+        className='cardsList__box flex gap-4 overflow-x-scroll max-w-3xl'
         id='slider'
       >
         {weatherData.days ? (

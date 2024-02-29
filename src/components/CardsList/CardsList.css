@@ -11,11 +11,11 @@
 
 .cardsList__button {
   font-size: 40px;
-  opacity: 0.5;
+  opacity: 0.4;
   width: 30px;
   height: 130px;
   border-radius: 11.385px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.099);
   backdrop-filter: blur(50px);
   padding: 3px;
   box-sizing: content-box;
@@ -23,5 +23,5 @@
 }
 
 .cardsList__button:hover {
-  opacity: 1;
+  opacity: .7;
 }
