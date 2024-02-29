@@ -18,11 +18,11 @@ export default function CurrentWeather ({ weatherData }) {
       )}
 
       <div className='flex text-white py-2 drop-shadow-[-4.51px_2.26px_0.75px_rgba(0,0,0,0.15)]'>
-        <h1 className='font-thin text-[164px] leading-[120%] drop-shadow-lg'>
+        <h2 className='font-thin text-[164px] leading-[120%] drop-shadow-lg'>
           {weatherData.currentConditions
             ? Math.round(weatherData.currentConditions.temp)
             : '0'}
-        </h1>
+        </h2>
         <p className='text-3xl p-2.5 tracking-tight drop-shadow-lg'>° C </p>
       </div>
       <CurrentDate data={weatherData} />

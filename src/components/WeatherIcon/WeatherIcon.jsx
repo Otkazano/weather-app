@@ -54,7 +54,6 @@ export default function WeatherIcon ({ data, classList }) {
   }, [data])
 
   return (
-    <>
       <Image
         src={path}
         alt='Иконка погоды'
@@ -63,6 +62,5 @@ export default function WeatherIcon ({ data, classList }) {
         priority
         className={classList}
       />
-    </>
   )
 }

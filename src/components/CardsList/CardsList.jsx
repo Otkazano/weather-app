@@ -19,26 +19,41 @@ export default function CardsList ({ weatherData }) {
   }, [weatherData])
 
   return (
-    <section className='flex gap-3 px-16 text-white drop-shadow-lg'>
-      <button title='scroll left' onClick={slideLeft} className='cardsList__button'>
-        &#8249;
-      </button>
-      <div
-        className='cardsList__box flex gap-4 overflow-x-scroll max-w-3xl'
-        id='slider'
-      >
-        {weatherData.days ? (
-          weatherData.days.map(day => {
-            return <SmallInfoCard key={Math.random()} dayData={day} />
-          })
-        ) : (
-          <></>
-        )}
-      </div>
+    <>
+      {weatherData.days ? (
+        <section className='flex gap-3 px-16 text-white drop-shadow-lg'>
+          <h3 hidden={true}>Список карточек погоды</h3>
+          <button
+            title='scroll left'
+            onClick={slideLeft}
+            className='cardsList__button'
+          >
+            &#8249;
+          </button>
+          <div
+            className='cardsList__box flex gap-4 overflow-x-scroll max-w-2xl'
+            id='slider'
+          >
+            {weatherData.days ? (
+              weatherData.days.map(day => {
+                return <SmallInfoCard key={Math.random()} dayData={day} />
+              })
+            ) : (
+              <></>
+            )}
+          </div>
 
-      <button title='scroll right' onClick={slideRight} className='cardsList__button'>
-        &#8250;
-      </button>
-    </section>
+          <button
+            title='scroll right'
+            onClick={slideRight}
+            className='cardsList__button'
+          >
+            &#8250;
+          </button>
+        </section>
+      ) : (
+        <></>
+      )}
+    </>
   )
 }

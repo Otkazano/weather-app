@@ -5,6 +5,7 @@ export default function SmallInfoCard ({ dayData }) {
   const dayOfWeek = new Date(dayData.datetime).getDay()
   return (
     <article className='smallInfoCard'>
+      <h4 hidden={true}>Карточка погоды</h4>
       <div className='smallInfoCard__tempInfo'>
         <p>{Math.round(dayData.temp)} </p>
         <p>°C</p>

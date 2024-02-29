@@ -15,9 +15,9 @@ export default function SearchInput () {
 
   return (
     <section className='w-full p-5'>
-      <h1 className='m-auto text-center p-4 text-2xl drop-shadow-lg text-3xl font-semibold'>
+      <h2 className='m-auto text-center p-4 text-2xl drop-shadow-lg text-3xl font-semibold'>
         Найди свой город!
-      </h1>
+      </h2>
       <form
         onSubmit={handleSubmit}
         name='searchForm'
