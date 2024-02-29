@@ -31,7 +31,7 @@ export default function CityNamePage () {
   }, [params])
 
   return (
-    <main className='flex flex-col grow max-w-[1440px] mx-auto w-full relative '>
+    <main className='flex flex-col grow max-w-[1440px] mx-auto w-full relative'>
       {!isError ? (
         <>
           <section className='flex flex-col grow'>
