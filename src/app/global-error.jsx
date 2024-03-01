@@ -1,4 +1,5 @@
 'use client'
+import Footer from '@/components/Footer/Footer'
 import { useRouter } from 'next/navigation'
 
 export default function GlobalError ({}) {
