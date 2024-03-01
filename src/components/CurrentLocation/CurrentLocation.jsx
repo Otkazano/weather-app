@@ -24,7 +24,7 @@ export default function CurrentLocation () {
     getCurrentLocation(ipAddress.ip)
       .then(res => {
         if (res.location !== null) {
-          setCurrentCity(res.location.dat.asdasd)
+          setCurrentCity(res.location.data.city)
         } else {
           setCurrentCity(ipAddress.city)
         }
