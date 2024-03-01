@@ -6,8 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'The Weather App',
-  description: 'Узнать погоду в городе',
-  viewport: 'width=device-width, initial-scale=1.0'
+  description: 'Узнать погоду в городе'
 }
 
 export default function RootLayout ({ children }) {

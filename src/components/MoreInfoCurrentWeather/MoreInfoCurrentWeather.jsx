@@ -6,6 +6,7 @@ import locationIcon from '@/images/locationIcon.svg'
 import React from 'react'
 import BurgerMenuButton from '../BurgerMenuButton/BurgerMenuButton'
 import useWindowDimensions from '@/hooks/useWindowDimension'
+import WindDir from '../WindDir/WindDir'
 
 export default function MoreInfoCurrentWeather ({ weatherData }) {
   const [isOpen, setIsOpen] = React.useState(Boolean)
@@ -43,7 +44,7 @@ export default function MoreInfoCurrentWeather ({ weatherData }) {
               width1260 ? 'absolute' : 'fixed'
             } ${!isOpen && !width1260 ? 'translate-x-full' : ''}`}
           >
-            <div className='flex gap-2 items-center'>
+            <div className='flex gap-2 pb-4 items-center'>
               <Image
                 src={locationIcon}
                 alt='Иконка локации'
@@ -51,18 +52,38 @@ export default function MoreInfoCurrentWeather ({ weatherData }) {
                 height={'auto'}
                 priority
               />
-              <p className='text-l truncate font-light max-w-72'>
+              <p className='text-base truncate font-light max-w-72'>
                 {weatherData.resolvedAddress}
               </p>
             </div>
-            <div className='p-3 flex justify-between'>
-            <p className='text-l font-semibold '>
-                Описание:
-              </p>
-              <p className='text-l  font-light '>
+            <div className='px-3 pb-1 flex justify-between items-center gap-2'>
+              <p className='font-light'>Состояние погоды</p>
+              <p className='text-lg  font-medium truncate'>
                 {weatherData.currentConditions.conditions}
               </p>
             </div>
+            <div className='px-3 pb-1 flex justify-between items-center gap-2'>
+              <p className='font-light'>Ощущается как</p>
+              <p className='text-lg  font-medium'>
+                {Math.round(weatherData.currentConditions.feelslike)} °C
+              </p>
+            </div>
+            <div className='px-3 pb-1 flex justify-between items-center gap-2'>
+              <p className='font-light'>Порывы ветра до</p>
+              <p className='text-lg  font-medium'>
+                {weatherData.currentConditions.windgust || '-'} км/ч
+              </p>
+            </div>
+            <div className='px-3 pb-1 flex justify-between items-center gap-2'>
+              <p className='font-light'>Атмосферное давление</p>
+              <p className='text-lg  font-medium'>
+                {Math.round(
+                  weatherData.currentConditions.pressure * 0.75006156
+                )}
+                мм рт. ст.
+              </p>
+            </div>
+            <WindDir weatherData={weatherData} />
           </aside>
         </>
       ) : (
