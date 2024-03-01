@@ -1,11 +1,13 @@
-export default function BurgerMenuButton ({ onClick, isOpen }) {
+export default function BurgerMenuButton ({ onClick, isOpen, hidden }) {
   function handleClick () {
     onClick()
   }
   return (
     <button
       onClick={handleClick}
-      className='flex flex-col justify-center items-center absolute right-0 px-4 py-7 z-10 opacity-70 hover:opacity-100'
+      className={`flex flex-col justify-center items-center absolute right-0 px-4 py-7 z-10 opacity-70 hover:opacity-100 ${
+        hidden ? 'hidden' : ''
+      }`}
       title='управление бурег меню'
     >
       <span

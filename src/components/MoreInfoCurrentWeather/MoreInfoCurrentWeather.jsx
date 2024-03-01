@@ -5,22 +5,41 @@ import Image from 'next/image'
 import locationIcon from '@/images/locationIcon.svg'
 import React from 'react'
 import BurgerMenuButton from '../BurgerMenuButton/BurgerMenuButton'
+import useWindowDimensions from '@/hooks/useWindowDimension'
 
 export default function MoreInfoCurrentWeather ({ weatherData }) {
   const [isOpen, setIsOpen] = React.useState(Boolean)
+  const [showButton, setShowButton] = React.useState(Boolean)
+  const [width1260, setWidth1260] = React.useState(Boolean)
+  const { width, height } = useWindowDimensions()
+
   function handleClick () {
     setIsOpen(!isOpen)
   }
+
+  React.useEffect(() => {
+    if (width >= 1260) {
+      setIsOpen(true)
+      setShowButton(true)
+      setWidth1260(true)
+    } else {
+      setIsOpen(false)
+      setShowButton(false)
+      setWidth1260(false)
+    }
+  }, [width])
 
   return (
     <>
       {weatherData.currentConditions ? (
         <>
-          <BurgerMenuButton onClick={handleClick} isOpen={isOpen} />
+          <BurgerMenuButton
+            onClick={handleClick}
+            isOpen={isOpen}
+            hidden={showButton}
+          />
           <aside
-            className={` ${
-              !isOpen ? 'opacity-0 invisible' : ''
-            } flex text-white flex-col grow p-4 w-full drop-shadow-lg moreInfoCurrentWeather transition-all duration-300`}
+            className={`flex text-white flex-col grow p-4 w-full drop-shadow-lg transition-all duration-300 moreInfoCurrentWeather ${width1260 ? 'absolute' : 'fixed'} ${!isOpen && !width1260 ? 'translate-x-full' : ''}`}
           >
             <div className='flex gap-2 items-center'>
               <Image
