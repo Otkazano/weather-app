@@ -29,7 +29,7 @@ export default function SearchInput () {
           value={search}
           onChange={e => setSearch(e.target.value)}
           name='searchFormName'
-          className='searchInout__input w-9/12 p-2 rounded-xl	drop-shadow-lg'
+          className='searchInput__input w-9/12 p-2 rounded-xl	drop-shadow-lg text-lg'
           required
           autoComplete='off'
         ></input>

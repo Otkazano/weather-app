@@ -1,20 +1,20 @@
-.searchInout__input {
+.searchInput__input {
   background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(50px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.searchInout__input::placeholder {
+.searchInput__input::placeholder {
   color: white;
 }
 
-.searchInout__input:focus {
+.searchInput__input:focus {
   outline: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-.searchInout__input::-webkit-search-decoration,
-.searchInout__input::-webkit-search-cancel-button,
-.searchInout__input::-webkit-search-results-button,
-.searchInout__input::-webkit-search-results-decoration {
+.searchInput__input::-webkit-search-decoration,
+.searchInput__input::-webkit-search-cancel-button,
+.searchInput__input::-webkit-search-results-button,
+.searchInput__input::-webkit-search-results-decoration {
   -webkit-appearance: none;
 }

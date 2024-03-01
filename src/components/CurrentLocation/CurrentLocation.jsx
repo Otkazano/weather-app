@@ -24,14 +24,14 @@ export default function CurrentLocation () {
     getCurrentLocation(ipAddress.ip)
       .then(res => {
         if (res.location !== null) {
-          setCurrentCity(res.location.akhsbdfkhsdfhs.asjfoajnfkiasdf)
+          setCurrentCity(res.location.data.city)
         } else {
-          setCurrentCity(ipAddress.city.akhsbdfkhsdfhs.asjfoajnfkiasdf)
+          setCurrentCity(ipAddress.city)
         }
       })
       .catch(err => {
         console.log(err)
-        setCurrentCity(ipAddress.city.akhsbdfkhsdfhs.asjfoajnfkiasdf)
+        setCurrentCity('не удалось определить')
       })
   }, [ipAddress])
 

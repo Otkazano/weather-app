@@ -39,7 +39,9 @@ export default function MoreInfoCurrentWeather ({ weatherData }) {
             hidden={showButton}
           />
           <aside
-            className={`flex text-white flex-col grow p-4 w-full drop-shadow-lg transition-all duration-300 moreInfoCurrentWeather ${width1260 ? 'absolute' : 'fixed'} ${!isOpen && !width1260 ? 'translate-x-full' : ''}`}
+            className={`flex text-white flex-col grow p-4 w-full drop-shadow-lg transition-all duration-300 moreInfoCurrentWeather ${
+              width1260 ? 'absolute' : 'fixed'
+            } ${!isOpen && !width1260 ? 'translate-x-full' : ''}`}
           >
             <div className='flex gap-2 items-center'>
               <Image
@@ -51,6 +53,14 @@ export default function MoreInfoCurrentWeather ({ weatherData }) {
               />
               <p className='text-l truncate font-light max-w-72'>
                 {weatherData.resolvedAddress}
+              </p>
+            </div>
+            <div className='p-3 flex justify-between'>
+            <p className='text-l font-semibold '>
+                Описание:
+              </p>
+              <p className='text-l  font-light '>
+                {weatherData.currentConditions.conditions}
               </p>
             </div>
           </aside>
