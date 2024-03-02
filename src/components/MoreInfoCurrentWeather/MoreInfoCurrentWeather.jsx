@@ -7,6 +7,7 @@ import React from 'react'
 import BurgerMenuButton from '../BurgerMenuButton/BurgerMenuButton'
 import useWindowDimensions from '@/hooks/useWindowDimension'
 import WindDir from '../WindDir/WindDir'
+import Clock from '../Clock/Clock'
 
 export default function MoreInfoCurrentWeather ({ weatherData }) {
   const [isOpen, setIsOpen] = React.useState(Boolean)
@@ -44,7 +45,7 @@ export default function MoreInfoCurrentWeather ({ weatherData }) {
               width1260 ? 'absolute' : 'fixed'
             } ${!isOpen && !width1260 ? 'translate-x-full' : ''}`}
           >
-            <div className='flex gap-2 pb-4 items-center'>
+            <div className='flex gap-2 pb-10 items-center'>
               <Image
                 src={locationIcon}
                 alt='Иконка локации'
@@ -74,6 +75,7 @@ export default function MoreInfoCurrentWeather ({ weatherData }) {
                 {weatherData.currentConditions.windgust || '-'} км/ч
               </p>
             </div>
+            <WindDir weatherData={weatherData} />
             <div className='px-3 pb-1 flex justify-between items-center gap-2'>
               <p className='font-light'>Атмосферное давление</p>
               <p className='text-lg  font-medium'>
@@ -83,7 +85,16 @@ export default function MoreInfoCurrentWeather ({ weatherData }) {
                 мм рт. ст.
               </p>
             </div>
-            <WindDir weatherData={weatherData} />
+            <div className='flex px-3 pb-1 pt-10 justify-around items-center gap-2'>
+              <Clock
+                title={'Рассвет'}
+                weatherData={weatherData.currentConditions.sunrise}
+              />
+              <Clock
+                title={'Закат'}
+                weatherData={weatherData.currentConditions.sunset}
+              />
+            </div>
           </aside>
         </>
       ) : (
