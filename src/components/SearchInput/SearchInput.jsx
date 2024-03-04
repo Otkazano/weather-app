@@ -3,36 +3,77 @@
 import './SearchInput.css'
 import React from 'react'
 import { useRouter } from 'next/navigation'
+import { getHintForInput } from '@/services/getHintForInput'
 
 export default function SearchInput () {
   const router = useRouter()
   const [search, setSearch] = React.useState('')
+  const [hintsShowList, setHintsShowList] = React.useState([])
+  const inputReference = React.useRef(null)
 
   function handleSubmit (e) {
     e.preventDefault()
     router.push(`/search/${search}`)
   }
 
+  function onChangeInput (e) {
+    setSearch(e.target.value)
+    getHintForInput(e.target.value)
+      .then(res => {
+        console.log(res)
+        setHintsShowList(res.suggestions)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   return (
-    <section className='w-full p-5'>
-      <h2 className='m-auto text-center p-4 text-2xl drop-shadow-lg text-3xl font-semibold'>
+    <section className='w-full px-5 py-6'>
+      <h2 className='m-auto text-center p-4 drop-shadow-lg text-3xl font-semibold'>
         Найди свой город!
       </h2>
       <form
         onSubmit={handleSubmit}
         name='searchForm'
-        className='flex justify-center gap-3'
+        className='flex justify-center gap-3 relative'
       >
-        <input
-          type='search'
-          placeholder='Название города'
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          name='searchFormName'
-          className='searchInput__input w-9/12 p-2 rounded-xl	drop-shadow-lg text-lg'
-          required
-          autoComplete='off'
-        ></input>
+        <div className='flex flex-col w-9/12 drop-shadow-lg'>
+          <input
+            type='search'
+            placeholder='Название города'
+            value={search}
+            onChange={e => onChangeInput(e)}
+            name='searchFormName'
+            className='searchInput__input p-2 rounded-xl text-xl relative'
+            required
+            autoComplete='off'
+            ref={inputReference}
+          ></input>
+          {hintsShowList.length !== 0 ? (
+            <ul className='absolute w-full top-[46px] flex p-1 flex-col rounded-xl bg-neutral-950/50 backdrop-blur-2xl'>
+              {hintsShowList.map(item => {
+                return (
+                  <li key={Math.random()}>
+                    <button
+                      type='button'
+                      onClick={() => {
+                        setSearch(item.value)
+                        inputReference.current.focus()
+                      }}
+                      className='w-full text-start px-2 drop-shadow-lg opacity-80 hover:opacity-100 focus:opacity-100'
+                    >
+                      {item.value}
+                    </button>
+                  </li>
+                )
+              })}
+            </ul>
+          ) : (
+            <></>
+          )}
+        </div>
+
         <button type='submit'>
           <svg
             xmlns='http://www.w3.org/2000/svg'

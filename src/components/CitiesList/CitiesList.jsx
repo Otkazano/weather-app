@@ -5,15 +5,15 @@ import './CitiesList.css'
 
 export default function CitiesList () {
   return (
-    <section className='w-full p-5'>
-      <h2 className='m-auto text-center p-4 text-2xl drop-shadow-lg text-3xl font-semibold'>
+    <section className='w-full px-5 py-6'>
+      <h2 className='m-auto text-center p-4 text-2xl drop-shadow-lg text-3xl font-semibold relative z-[-1]'>
         Либо выбери его из списка ниже
       </h2>
       <ul className='w-full grid grid-cols-[repeat(auto-fit,_200px)] gap-10 justify-center'>
         {alphabet.map(letter => {
           return (
             <li key={Math.random()}>
-              <h3 className='citiesList__letter mb-1 drop-shadow-lg text-lg font-semibold'>
+              <h3 className='citiesList__letter mb-1 drop-shadow-lg text-lg font-semibold relative z-[-1]'>
                 {letter.toUpperCase()}
               </h3>
               <CityLink firstLetter={letter} />

@@ -70,6 +70,12 @@ export default function MoreInfoCurrentWeather ({ weatherData }) {
               </p>
             </div>
             <div className='px-3 pb-1 flex justify-between items-center gap-2'>
+              <p className='font-light'>Видимость</p>
+              <p className='text-lg  font-medium'>
+                {weatherData.currentConditions.visibility || '-'} км
+              </p>
+            </div>
+            <div className='px-3 pb-1 flex justify-between items-center gap-2'>
               <p className='font-light'>Порывы ветра до</p>
               <p className='text-lg  font-medium'>
                 {weatherData.currentConditions.windgust || '-'} км/ч

@@ -18,7 +18,7 @@ export default function CityLink ({ firstLetter }) {
             <button
               type='button'
               onClick={() => router.push(`/search/${encodeURI(city)}`)}
-              className='font-light text-start opacity-80 hover:opacity-100'
+              className='font-light text-start opacity-80 hover:opacity-100 relative'
             >
               &#183; {city}
             </button>
