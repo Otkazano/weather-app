@@ -62,7 +62,7 @@ export default function SearchInput () {
                           setSearch(item.value)
                           inputReference.current.focus()
                         }}
-                        className='w-full text-start px-2 drop-shadow-lg opacity-80 hover:opacity-100 focus:opacity-100'
+                        className='text-start px-2 opacity-80 hover:opacity-100 focus:opacity-100'
                       >
                         {item.value}
                       </button>
