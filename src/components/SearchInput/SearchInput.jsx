@@ -38,14 +38,14 @@ export default function SearchInput () {
         name='searchForm'
         className='flex justify-center gap-3 relative'
       >
-        <div className='flex flex-col w-9/12 drop-shadow-lg'>
+        <div className='flex flex-col drop-shadow-lg w-9/12 items-stretch'>
           <input
             type='search'
             placeholder='Название города'
             value={search}
             onChange={e => onChangeInput(e)}
             name='searchFormName'
-            className='searchInput__input p-2 rounded-xl text-xl relative focus:text-xl w-full'
+            className='searchInput__input p-2 rounded-xl text-xl relative focus:text-xl'
             required
             autoComplete='off'
             ref={inputReference}
@@ -55,14 +55,14 @@ export default function SearchInput () {
               {hintsShowList.map(item => {
                 if (item.data.city) {
                   return (
-                    <li key={Math.random()} className='w-full'>
+                    <li key={Math.random()} className=''>
                       <button
                         type='button'
                         onClick={() => {
                           setSearch(item.value)
                           inputReference.current.focus()
                         }}
-                        className='w-full text-start px-2 opacity-80 hover:opacity-100 focus:opacity-100'
+                        className='text-start px-2 opacity-80 hover:opacity-100 focus:opacity-100 w-full'
                       >
                         {item.value}
                       </button>
