@@ -36,9 +36,9 @@ export default function SearchInput () {
       <form
         onSubmit={handleSubmit}
         name='searchForm'
-        className='flex justify-center gap-3 relative'
+        className='flex justify-center gap-3 '
       >
-        <div className='flex flex-col drop-shadow-lg w-9/12 items-stretch'>
+        <div className='flex flex-col drop-shadow-lg w-9/12 items-stretch relative'>
           <input
             type='search'
             placeholder='Название города'
@@ -54,7 +54,7 @@ export default function SearchInput () {
           ></input>
 
           {hintsShowList.length !== 0 ? (
-            <ul className='absolute top-[46px] flex p-1 flex-col h-28 overflow-y-scroll rounded-xl bg-neutral-950/50 backdrop-blur-2xl searchInput__list w-11/12'>
+            <ul className='absolute top-[46px] flex p-1 flex-col h-28 overflow-y-scroll rounded-xl bg-neutral-950/50 backdrop-blur-2xl searchInput__list w-full'>
               {hintsShowList.map(item => {
                 if (item.data.city && !item.data.street && !item.data.house) {
                   return (
