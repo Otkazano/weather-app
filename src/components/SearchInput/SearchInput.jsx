@@ -49,10 +49,8 @@ export default function SearchInput () {
             required
             autoComplete='off'
             ref={inputReference}
-            list=''
             id='input'
-          ></input>
-
+          />
           {hintsShowList.length !== 0 ? (
             <ul className='absolute top-[46px] flex p-1 flex-col h-28 overflow-y-scroll rounded-xl bg-neutral-950/50 backdrop-blur-2xl searchInput__list w-full'>
               {hintsShowList.map(item => {
@@ -66,6 +64,7 @@ export default function SearchInput () {
                           inputReference.current.focus()
                         }}
                         className='text-start px-2 opacity-80 hover:opacity-100 focus:opacity-100 w-full'
+                        title={item.value}
                       >
                         {item.value}
                       </button>
@@ -79,7 +78,7 @@ export default function SearchInput () {
           )}
         </div>
 
-        <button type='submit'>
+        <button type='submit' title='Начать поиск'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='25'
