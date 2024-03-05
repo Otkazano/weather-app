@@ -34,7 +34,7 @@
   border-radius: 50px;
 }
 
-.searchInput__dataList::-webkit-scrollbar {
+/* .searchInput__dataList::-webkit-scrollbar {
   width: 10px;
 }
 
@@ -52,4 +52,4 @@
 .searchInput__option:hover,
 .active {
   background-color: lightblue;
-}
+} */
