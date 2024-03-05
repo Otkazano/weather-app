@@ -45,32 +45,30 @@ export default function SearchInput () {
             value={search}
             onChange={e => onChangeInput(e)}
             name='searchFormName'
-            className='searchInput__input p-2 rounded-xl text-xl relative focus:text-xl'
+            className='searchInput__input p-2 rounded-xl text-xl relative focus:text-xl w-full'
             required
             autoComplete='off'
             ref={inputReference}
           ></input>
           {hintsShowList.length !== 0 ? (
-            <ul className='absolute w-full top-[46px] flex p-1 flex-col h-28 overflow-y-scroll rounded-xl bg-neutral-950/50 backdrop-blur-2xl searchInput__list'>
+            <ul className='absolute top-[46px] flex p-1 flex-col h-28 overflow-y-scroll rounded-xl bg-neutral-950/50 backdrop-blur-2xl searchInput__list w-full'>
               {hintsShowList.map(item => {
-                return (
-                  <li key={Math.random()}>
-                    {item.data.city ? (
+                if (item.data.city) {
+                  return (
+                    <li key={Math.random()} className='w-full'>
                       <button
                         type='button'
                         onClick={() => {
                           setSearch(item.value)
                           inputReference.current.focus()
                         }}
-                        className='text-start px-2 opacity-80 hover:opacity-100 focus:opacity-100'
+                        className='w-full text-start px-2 opacity-80 hover:opacity-100 focus:opacity-100'
                       >
                         {item.value}
                       </button>
-                    ) : (
-                      ''
-                    )}
-                  </li>
-                )
+                    </li>
+                  )
+                }
               })}
             </ul>
           ) : (
