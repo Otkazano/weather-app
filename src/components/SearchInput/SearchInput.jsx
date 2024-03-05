@@ -11,6 +11,8 @@ export default function SearchInput () {
   const [hintsShowList, setHintsShowList] = React.useState([])
   const inputReference = React.useRef(null)
 
+  const [showOptions, setShowOptions] = React.useState(false)
+
   function handleSubmit (e) {
     e.preventDefault()
     router.push(`/search/${search}`)
@@ -49,9 +51,42 @@ export default function SearchInput () {
             required
             autoComplete='off'
             ref={inputReference}
+            list=''
+            id='input'
+            onFocus={() => {
+              setShowOptions(true)
+            }}
           ></input>
+
           {hintsShowList.length !== 0 ? (
-            <ul className='absolute top-[46px] flex p-1 flex-col h-28 overflow-y-scroll rounded-xl bg-neutral-950/50 backdrop-blur-2xl searchInput__list w-full'>
+            <datalist
+              id='cities'
+              className={` absolute top-[46px]  p-1 flex-col h-28 overflow-y-scroll rounded-xl bg-neutral-950/50 backdrop-blur-2xl w-full searchInput__dataList ${showOptions ? 'flex' : 'hidden'}`}
+            >
+              {hintsShowList.map(item => {
+                if (item.data.city && !item.data.street && !item.data.house) {
+                  return (
+                    <option
+                      value={`${item.value}`}
+                      key={Math.random()}
+                      className='text-start px-2 opacity-80 cursor-pointer hover:opacity-100 focus:opacity-100 w-full'
+                      onClick={() => {
+                        setSearch(item.value)
+                        setShowOptions(false)
+                      }}
+                    >
+                      {item.value}
+                    </option>
+                  )
+                }
+              })}
+            </datalist>
+          ) : (
+            <></>
+          )}
+
+          {/* {hintsShowList.length !== 0 ? (
+            <ul className='absolute top-[46px] flex p-1 flex-col h-28 overflow-y-scroll rounded-xl bg-neutral-950/50 backdrop-blur-2xl searchInput__list w-full' >
               {hintsShowList.map(item => {
                 if (item.data.city) {
                   return (
@@ -64,7 +99,7 @@ export default function SearchInput () {
                         }}
                         className='text-start px-2 opacity-80 hover:opacity-100 focus:opacity-100 w-full'
                       >
-                        {item.value}
+                        {item.value}  
                       </button>
                     </li>
                   )
@@ -73,7 +108,7 @@ export default function SearchInput () {
             </ul>
           ) : (
             <></>
-          )}
+          )} */}
         </div>
 
         <button type='submit'>
