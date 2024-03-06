@@ -8,6 +8,8 @@ import BurgerMenuButton from '../BurgerMenuButton/BurgerMenuButton'
 import useWindowDimensions from '@/hooks/useWindowDimension'
 import WindDir from '../WindDir/WindDir'
 import Clock from '../Clock/Clock'
+import HoursInfoCard from '../HoursInfoCard/HoursInfoCard'
+import HoursInfoList from '../HoursInfoList/HoursInfoList'
 
 export default function MoreInfoCurrentWeather ({ weatherData }) {
   const [isOpen, setIsOpen] = React.useState(Boolean)
@@ -41,7 +43,7 @@ export default function MoreInfoCurrentWeather ({ weatherData }) {
             hidden={showButton}
           />
           <aside
-            className={`flex text-white flex-col grow p-4 w-full drop-shadow-lg transition-all duration-300 moreInfoCurrentWeather ${
+            className={`flex text-white flex-col grow p-4 w-full drop-shadow-lg transition-all duration-300 overflow-y-scroll moreInfoCurrentWeather ${
               width1260 ? 'absolute' : 'fixed'
             } ${!isOpen && !width1260 ? 'translate-x-full' : ''}`}
           >
@@ -91,7 +93,7 @@ export default function MoreInfoCurrentWeather ({ weatherData }) {
                 мм рт. ст.
               </p>
             </div>
-            <div className='flex px-3 pb-1 pt-10 justify-around items-center gap-2'>
+            <div className='flex px-3 pb-1 pt-7 justify-around items-center gap-2'>
               <Clock
                 title={'Рассвет'}
                 weatherData={weatherData.currentConditions.sunrise}
@@ -101,6 +103,22 @@ export default function MoreInfoCurrentWeather ({ weatherData }) {
                 weatherData={weatherData.currentConditions.sunset}
               />
             </div>
+            <hr className='my-5 w-4/5 mx-auto opacity-70' />
+            <div className='px-3 pb-1 flex justify-between gap-2'>
+              <div className='flex flex-col text-center gap-2'>
+                <p className='font-light'>Максимальная температура</p>
+                <p className='text-lg  font-medium'>
+                  {Math.round(weatherData.days[0].tempmax)} °C
+                </p>
+              </div>
+              <div className='flex flex-col text-center gap-2'>
+                <p className='font-light'>Минимальная температура</p>
+                <p className='text-lg  font-medium'>
+                  {Math.round(weatherData.days[0].tempmin)} °C
+                </p>
+              </div>
+            </div>
+            <HoursInfoList weatherData={weatherData} />
           </aside>
         </>
       ) : (

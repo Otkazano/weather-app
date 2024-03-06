@@ -1,0 +1,26 @@
+.hoursInfoList__box {
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.hoursInfoList__box::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hoursInfoList__button {
+  font-size: 20px;
+  opacity: 0.6;
+  width: 30px;
+  border-radius: 11.385px;
+  background: rgba(255, 255, 255, 0.099);
+  backdrop-filter: blur(50px);
+  padding: 3px;
+  box-sizing: content-box;
+  z-index: 10;
+}
+
+.hoursInfoList__button:hover {
+  opacity: 0.9;
+}
