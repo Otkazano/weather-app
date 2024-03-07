@@ -8,7 +8,6 @@ import BurgerMenuButton from '../BurgerMenuButton/BurgerMenuButton'
 import useWindowDimensions from '@/hooks/useWindowDimension'
 import WindDir from '../WindDir/WindDir'
 import Clock from '../Clock/Clock'
-import HoursInfoCard from '../HoursInfoCard/HoursInfoCard'
 import HoursInfoList from '../HoursInfoList/HoursInfoList'
 
 export default function MoreInfoCurrentWeather ({ weatherData }) {
@@ -104,15 +103,15 @@ export default function MoreInfoCurrentWeather ({ weatherData }) {
               />
             </div>
             <hr className='my-5 w-4/5 mx-auto opacity-70' />
-            <div className='px-3 pb-1 flex justify-between gap-2'>
-              <div className='flex flex-col text-center gap-2'>
-                <p className='font-light'>Максимальная температура</p>
+            <div className='px-3 pb-1 flex justify-around '>
+              <div className='flex flex-col text-center gap-1'>
+                <p className='font-light'>Макс t°</p>
                 <p className='text-lg  font-medium'>
                   {Math.round(weatherData.days[0].tempmax)} °C
                 </p>
               </div>
-              <div className='flex flex-col text-center gap-2'>
-                <p className='font-light'>Минимальная температура</p>
+              <div className='flex flex-col text-center gap-1'>
+                <p className='font-light'>Мин t°</p>
                 <p className='text-lg  font-medium'>
                   {Math.round(weatherData.days[0].tempmin)} °C
                 </p>

@@ -1,8 +1,8 @@
 export default function AboutProject () {
   return (
-    <section className='text-white max-w-3xl m-20 ml-auto drop-shadow-lg'>
-      <h1 className='text-6xl text-center font-semibold'>Узнай прогноз погоды!</h1>
-      <p className='text-xl pt-10 font-normal text-justify'>
+    <section className='text-white max-w-3xl m-20 mb-14 ml-auto drop-shadow-lg p-3 2xl:mt-80 lg:mx-auto lg:p-6 md:p-10 sm:mb-5 sm:p-5'>
+      <h1 className='text-6xl text-center font-semibold md:text-5xl sm:text-4xl'>Узнай прогноз погоды!</h1>
+      <p className='text-xl pt-10 font-normal text-justify md:text-lg sm:text-base'>
         Прогнозы погоды здесь, чтобы помочь вам быть в курсе текущих и будущих
         метеорологических условий в любом уголке мира. Независимо от того, где
         вы находитесь, наш сайт предоставит вам точную информацию о температуре,

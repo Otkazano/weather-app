@@ -1,9 +1,9 @@
 export default function Footer () {
   return (
     <footer className='m-10 '>
-      <ul className='flex justify-center gap-12'>
+      <ul className='flex justify-center gap-12 md:gap-8 sm:gap-6'>
         <li>
-          <p className='text-sm opacity-15 hover:opacity-50 cursor-default'>
+          <p className='text-sm opacity-15 hover:opacity-50 cursor-default sm:text-xs'>
             &copy; 2024 Vladimir&nbsp;Strugov
           </p>
         </li>

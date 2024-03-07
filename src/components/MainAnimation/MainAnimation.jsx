@@ -1,8 +1,11 @@
 'use client'
 
+import useWindowDimensions from '@/hooks/useWindowDimension'
 import React from 'react'
 
 export default function MainAnimation () {
+  const { width, height } = useWindowDimensions()
+
   React.useEffect(() => {
     var canvas = document.querySelector('#scene'),
       ctx = canvas.getContext('2d', { willReadFrequently: true }),
@@ -13,8 +16,8 @@ export default function MainAnimation () {
 
     const colors = ['#F8F4FF', '#F8F8FF', '#FFF5EE', '#F5FFFA', '#F5F5F5']
 
-    const ww = (canvas.width = 1200)
-    const wh = (canvas.height = 600)
+    const ww = (canvas.width = 1000)
+    const wh = (canvas.height = 500)
 
     function Particle (x, y) {
       this.x = ww / 2
@@ -123,7 +126,7 @@ export default function MainAnimation () {
 
   return (
     <>
-      <canvas id='scene' className='fixed bg-transparent'></canvas>
+      <canvas id='scene' className='absolute bg-transparent'></canvas>
     </>
   )
 }
