@@ -36,7 +36,7 @@ export default function CurrentLocation () {
   }, [ipAddress])
 
   return (
-    <div className='p-5 text-white drop-shadow-lg text-l flex'>
+    <div className='p-5 text-white drop-shadow-lg text-l flex md:p-3 sm:text-xs md:flex-col'>
       <p className='opacity-70'>Текущая локация: &nbsp;</p>
       {currentCity === 'не удалось определить' ? (
         <p className='opacity-70'>не удалось определить</p>
@@ -44,7 +44,7 @@ export default function CurrentLocation () {
         <button
           type='button'
           onClick={() => router.push(`/search/${currentCity}`)}
-          className='relative opacity-70 hover:opacity-100 underline'
+          className='relative opacity-70 hover:opacity-100 underline max-w-[170px] truncate'
         >
           {currentCity}
         </button>

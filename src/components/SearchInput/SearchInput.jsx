@@ -29,8 +29,8 @@ export default function SearchInput () {
   }
 
   return (
-    <section className='w-full px-5 py-6'>
-      <h2 className='m-auto text-center p-4 drop-shadow-lg text-3xl font-semibold'>
+    <section className='w-full px-5 py-6 sm:px-4 sm:py-5'>
+      <h2 className='m-auto text-center p-4 drop-shadow-lg text-3xl font-semibold sm:text-2xl sm:pt-1'>
         Найди свой город!
       </h2>
       <form
