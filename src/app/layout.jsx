@@ -11,9 +11,9 @@ export const metadata = {
 
 export default function RootLayout ({ children }) {
   return (
-    <html lang='ru'>
+    <html lang='ru' className='bg-main-color'>
       <body
-        className={`bg-main-color flex flex-col min-h-dvh overflow-x-hidden ${inter.className}`}
+        className={` flex flex-col min-h-dvh overflow-x-hidden ${inter.className}`}
       >
         {children}
         <Footer />
