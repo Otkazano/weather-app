@@ -21,3 +21,20 @@
   font-size: 20px;
   font-weight: 300;
 }
+
+@media (max-width: 445px) {
+  .smallInfoCard {
+    height: 100px;
+    min-width: 55px;
+    padding: 2px;
+  }
+
+  .smallInfoCard__tempInfo {
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  .smallInfoCard__dayOfWeek{
+    font-size: 14px;
+  }
+}

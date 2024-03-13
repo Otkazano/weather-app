@@ -10,7 +10,7 @@ export default function SmallInfoCard ({ dayData }) {
         <p>{Math.round(dayData.temp)} </p>
         <p>°C</p>
       </div>
-      <WeatherIcon data={dayData} classList={'smallInfoCard__icon drop-shadow-lg'} />
+      <WeatherIcon data={dayData} classList={'smallInfoCard__icon drop-shadow-lg xxs:w-10'} />
       <p className='smallInfoCard__dayOfWeek'>
         {dayOfWeek === 0 && 'Sun'}
         {dayOfWeek === 1 && 'Mon'}

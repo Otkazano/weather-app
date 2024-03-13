@@ -19,9 +19,17 @@
   backdrop-filter: blur(50px);
   padding: 3px;
   box-sizing: content-box;
-  z-index: 10;
+  z-index: 5;
 }
 
 .cardsList__button:hover {
-  opacity: .7;
+  opacity: 0.7;
+}
+
+@media (max-width: 445px) {
+  .cardsList__button {
+    font-size: 30px;
+    width: 25px;
+    height: 100px;
+  }
 }
