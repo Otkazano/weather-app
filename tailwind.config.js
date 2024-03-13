@@ -18,7 +18,9 @@ module.exports = {
       'lg': { max: '1024px' },
       'md': { max: '900px' },
       'my': {max: '685px'},
-      'sm': { max: '600px' }
+      'sm': { max: '600px' },
+      'xxs': { max: '445px' },
+      'vs': { max: '370px' }
     }
   },
   plugins: []

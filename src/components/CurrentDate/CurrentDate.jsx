@@ -27,10 +27,10 @@ export default function CurrentDate ({ data }) {
     <div className='text-white drop-shadow-lg font-extralight'>
       {date[2] ? (
         <>
-          <p className='text-4xl py-3'>
+          <p className='text-4xl py-3 sm:text-3xl sm:py-1 vs:text-2xl'>
             {date[0]}th {date[1]} &#8216;{date[2].slice(2)}
           </p>
-          <div className='text-2xl flex gap-12'>
+          <div className='text-2xl flex gap-12 sm:text-xl vs:text-lg'>
             <p className='relative main__line'>{dayOfWeek}</p>
             <p>
               {time[0]}:{time[1]}
@@ -38,7 +38,7 @@ export default function CurrentDate ({ data }) {
           </div>
         </>
       ) : (
-        <p className='text-2xl'>Узнаем дату в регионе</p>
+        <p className='text-2xl sm:text-xl'>Узнаем дату в регионе</p>
       )}
     </div>
   )
