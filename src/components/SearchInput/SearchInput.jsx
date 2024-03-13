@@ -20,7 +20,6 @@ export default function SearchInput () {
     setSearch(e.target.value)
     getHintForInput(e.target.value)
       .then(res => {
-        console.log(res)
         setHintsShowList(res.suggestions)
       })
       .catch(err => {

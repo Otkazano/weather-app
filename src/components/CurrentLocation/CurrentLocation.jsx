@@ -30,7 +30,6 @@ export default function CurrentLocation () {
         }
       })
       .catch(err => {
-        console.log(err)
         setCurrentCity('не удалось определить')
       })
   }, [ipAddress])
