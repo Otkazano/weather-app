@@ -27,7 +27,7 @@ export default function HoursInfoList ({ weatherData }) {
         &#8250;
       </button>
       <div
-        className='hoursInfoList__box flex px-2 gap-9 overflow-x-scroll mt-2'
+        className='hoursInfoList__box flex px-2 gap-9 overflow-x-scroll mt-2 sm:gap-7'
         id='hoursList-slider'
       >
         {weatherData.days[0].hours.map(day => {

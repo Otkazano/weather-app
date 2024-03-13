@@ -11,7 +11,9 @@ export default function Clock ({ weatherData, title }) {
 
   return (
     <div className='flex flex-col gap-2'>
-      <p className='font-light text-medium text-center drop-shadow-lg'>{title}</p>
+      <p className='font-light text-center drop-shadow-lg sm:text-sm'>
+        {title}
+      </p>
       <div className='clock__box'>
         <div className='clock'>
           <div className='hour'>
@@ -42,7 +44,7 @@ export default function Clock ({ weatherData, title }) {
             ></div>
           </div>
         </div>
-        <p className='text-center font-light text-lg py-5 drop-shadow-lg'>
+        <p className='text-center font-light text-lg py-5 drop-shadow-lg  sm:text-base'>
           {time[0]}ч {time[1]}м
         </p>
       </div>

@@ -14,7 +14,7 @@ export default function BreadCrumbs () {
         <button
           type='button'
           onClick={() => router.push('/')}
-          className='relative opacity-70 hover:opacity-100 sm:text-start h-fit'
+          className='relative opacity-70 hover:opacity-100 sm:text-start h-fit max-w-[300px]'
         >
           Домашнаяя страница
         </button>
@@ -28,11 +28,14 @@ export default function BreadCrumbs () {
               key={Math.random()}
               className='flex gap-3 md:gap-2 sm:gap-0 sm:flex-col '
             >
-              <p className='opacity-70 w-fit sm:rotate-90 sm:text-start'> &gt; </p>
+              <p className='opacity-70 w-fit sm:rotate-90 sm:text-start'>
+                {' '}
+                &gt;{' '}
+              </p>
               <button
                 type='button'
                 onClick={() => router.push(`/${page}`)}
-                className='relative h-fit opacity-70 hover:opacity-100 sm:text-start'
+                className='relative h-fit opacity-70 hover:opacity-100 sm:text-start max-w-[300px]'
               >
                 Страница поиска
               </button>
@@ -44,7 +47,10 @@ export default function BreadCrumbs () {
               key={Math.random()}
               className='flex gap-3 md:gap-2 sm:gap-0 sm:flex-col '
             >
-              <p className='opacity-70 w-fit sm:rotate-90 sm:text-start'> &gt; </p>
+              <p className='opacity-70 w-fit sm:rotate-90 sm:text-start'>
+                {' '}
+                &gt;{' '}
+              </p>
               <button
                 type='button'
                 onClick={() => router.push(`/search/${page}`)}

@@ -29,10 +29,10 @@ function WindDir ({weatherData}) {
   }, [])
 
   return (
-    <div className='px-3 pb-1 flex justify-between items-center gap-2'>
-      <p className='font-light'>Направление ветра</p>
-      <div className='flex gap-3'>
-        <p className='text-lg  font-medium'>{windDir}</p>
+    <div className='px-3 pb-1 flex justify-between items-center gap-2 '>
+      <p className='font-light sm:text-sm'>Направление ветра</p>
+      <div className='flex gap-3 sm:gap-2'>
+        <p className='text-lg  font-medium sm:text-base'>{windDir}</p>
         <Image
           src={windDirIcon}
           alt='Направление ветра'
@@ -43,7 +43,7 @@ function WindDir ({weatherData}) {
           height={'auto'}
           className='my-auto'
         />
-        <p className='text-lg  font-medium'>
+        <p className='text-lg font-medium sm:text-base'>
           {weatherData.currentConditions.winddir} °
         </p>
       </div>
