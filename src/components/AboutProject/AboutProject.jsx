@@ -1,6 +1,6 @@
 export default function AboutProject () {
   return (
-    <section className='text-white max-w-3xl m-20 mb-14 ml-auto drop-shadow-lg p-3 mt-80 mx-auto lg:p-6 md:p-10 sm:mb-5 sm:p-5'>
+    <section className='text-white max-w-3xl mx-auto mt-80 mb-2 ml-auto drop-shadow-lg p-3 lg:p-6 md:p-10 sm:p-5 '>
       <h1 className='text-6xl text-center font-semibold md:text-5xl sm:text-4xl'>
         Узнай прогноз погоды!
       </h1>

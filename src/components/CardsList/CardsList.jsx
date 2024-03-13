@@ -21,7 +21,7 @@ export default function CardsList ({ weatherData }) {
   return (
     <>
       {weatherData.days ? (
-        <section className='flex gap-3 px-16 text-white drop-shadow-lg'>
+        <section className='flex gap-3 px-16 text-white drop-shadow-lg sm:px-10 sm:gap-2'>
           <h3 hidden={true}>Список карточек погоды</h3>
           <button
             title='scroll left'

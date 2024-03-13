@@ -4,7 +4,7 @@ import WeatherIcon from '../WeatherIcon/WeatherIcon'
 
 export default function CurrentWeather ({ weatherData }) {
   return (
-    <section className='px-16 py-5'>
+    <section className='px-16 py-5 sm:px-10 sm:py-3'>
       {weatherData.currentConditions ? (
         <WeatherIcon
           data={weatherData.currentConditions}

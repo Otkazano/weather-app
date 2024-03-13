@@ -1,0 +1,20 @@
+.currentSummary__line::after {
+  content: ' ';
+  background: rgb(255, 255, 255, 0.6);
+  width: 1px;
+  height: 18px;
+  top: 7px;
+  left: calc(100% + 24px);
+  position: absolute;
+}
+
+@media (max-width: 685px) {
+  .currentSummary__line::after {
+    content: ' ';
+    width: 195px;
+    height: 1px;
+    top: 27px;
+    left: 5px;
+    position: absolute;
+  }
+}
