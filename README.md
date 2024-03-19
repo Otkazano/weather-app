@@ -11,6 +11,14 @@
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![Axios](https://img.shields.io/badge/Axios-purple.svg?style=for-the-badge&logo=axios&logoColor=white)
 
+### Функционал проекта:
+* Получениe данных прогноза погоды в любом городе;
+* Подсказки при вводе запроса в инпут;
+* Определение текущей геолокации пользователя;
+
+### Планы по дороботке
+* Добавить детальное описание прогноза на следующие дни;
+  
 ### Установка и запуск проекта: 
 Клонировать репозиторий:
 ```bash
