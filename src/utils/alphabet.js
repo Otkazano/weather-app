@@ -31,6 +31,6 @@ const alphabet = [
   'ь',
   'э',
   'ю',
-  'я'
-]
-export default alphabet
+  'я',
+];
+export default alphabet;

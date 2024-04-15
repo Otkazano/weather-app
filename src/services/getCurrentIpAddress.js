@@ -1,10 +1,10 @@
-import axios from 'axios'
+import axios from 'axios';
 
-export async function getCurrentIpAddress () {
+export async function getCurrentIpAddress() {
   try {
-    const response = await axios.get(`https://ipapi.co/json/`)
-    return response.data
+    const response = await axios.get(`https://ipapi.co/json/`);
+    return response.data;
   } catch (error) {
-    throw new Error(error)
+    throw new Error(error);
   }
 }

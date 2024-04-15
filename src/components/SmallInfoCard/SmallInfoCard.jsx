@@ -1,17 +1,17 @@
-import './SmallInfoCard.css'
-import WeatherIcon from '../WeatherIcon/WeatherIcon'
+import './SmallInfoCard.css';
+import WeatherIcon from '../WeatherIcon/WeatherIcon';
 
-export default function SmallInfoCard ({ dayData }) {
-  const dayOfWeek = new Date(dayData.datetime).getDay()
+export default function SmallInfoCard({ dayData }) {
+  const dayOfWeek = new Date(dayData.datetime).getDay();
   return (
-    <article className='smallInfoCard'>
+    <article className="smallInfoCard">
       <h4 hidden={true}>Карточка погоды</h4>
-      <div className='smallInfoCard__tempInfo'>
+      <div className="smallInfoCard__tempInfo">
         <p>{Math.round(dayData.temp)} </p>
         <p>°C</p>
       </div>
       <WeatherIcon data={dayData} classList={'smallInfoCard__icon drop-shadow-lg xxs:w-10'} />
-      <p className='smallInfoCard__dayOfWeek'>
+      <p className="smallInfoCard__dayOfWeek">
         {dayOfWeek === 0 && 'Sun'}
         {dayOfWeek === 1 && 'Mon'}
         {dayOfWeek === 2 && 'Tue'}
@@ -21,5 +21,5 @@ export default function SmallInfoCard ({ dayData }) {
         {dayOfWeek === 6 && 'Sat'}
       </p>
     </article>
-  )
+  );
 }

@@ -1,18 +1,18 @@
-import './Preloader.css'
+import './Preloader.css';
 
-function Preloader () {
+function Preloader() {
   return (
-    <section className='loader__box'>
-      <div className='loader'>
-        <div className='loader__bar'></div>
-        <div className='loader__bar'></div>
-        <div className='loader__bar'></div>
-        <div className='loader__bar'></div>
-        <div className='loader__bar'></div>
-        <div className='loader__ball'></div>
+    <section className="loader__box">
+      <div className="loader">
+        <div className="loader__bar"></div>
+        <div className="loader__bar"></div>
+        <div className="loader__bar"></div>
+        <div className="loader__bar"></div>
+        <div className="loader__bar"></div>
+        <div className="loader__ball"></div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Preloader
+export default Preloader;

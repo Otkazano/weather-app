@@ -1,110 +1,110 @@
-'use client'
-import React from 'react'
+'use client';
+import React from 'react';
 
-export default function MainAnimation () {
+export default function MainAnimation() {
   React.useEffect(() => {
     var canvas = document.querySelector('#scene'),
       ctx = canvas.getContext('2d', { willReadFrequently: true }),
       particles = [],
       amount = 0,
       mouse = { x: 0, y: 0 },
-      radius = 0.8
+      radius = 0.8;
 
-    const colors = ['#F8F4FF', '#F8F8FF', '#FFF5EE', '#F5FFFA', '#F5F5F5']
+    const colors = ['#F8F4FF', '#F8F8FF', '#FFF5EE', '#F5FFFA', '#F5F5F5'];
 
-    var ww = (canvas.width = window.innerWidth)
-    var wh = (canvas.height = window.innerHeight / 2)
+    var ww = (canvas.width = window.innerWidth);
+    var wh = (canvas.height = window.innerHeight / 2);
 
-    function Particle (x, y) {
-      this.x = ww / 2
-      this.y = wh / 2
+    function Particle(x, y) {
+      this.x = ww / 2;
+      this.y = wh / 2;
       this.dest = {
         x: x,
-        y: y
-      }
+        y: y,
+      };
 
       if (window.innerWidth > 800) {
-        this.r = 1.5
+        this.r = 1.5;
       } else {
-        this.r = 1
+        this.r = 1;
       }
-      this.r = 1.5
-      this.vx = (Math.random() - 0.5) * 10
-      this.vy = (Math.random() - 0.5) * 10
-      this.accX = 0
-      this.accY = 0
-      this.friction = Math.random() * 0.05 + 0.94
+      this.r = 1.5;
+      this.vx = (Math.random() - 0.5) * 10;
+      this.vy = (Math.random() - 0.5) * 10;
+      this.accX = 0;
+      this.accY = 0;
+      this.friction = Math.random() * 0.05 + 0.94;
 
-      this.color = colors[Math.floor(Math.random() * 6)]
+      this.color = colors[Math.floor(Math.random() * 6)];
     }
 
     Particle.prototype.render = function () {
-      this.accX = (this.dest.x - this.x) / 1000
-      this.accY = (this.dest.y - this.y) / 1000
-      this.vx += this.accX
-      this.vy += this.accY
-      this.vx *= this.friction
-      this.vy *= this.friction
+      this.accX = (this.dest.x - this.x) / 1000;
+      this.accY = (this.dest.y - this.y) / 1000;
+      this.vx += this.accX;
+      this.vy += this.accY;
+      this.vx *= this.friction;
+      this.vy *= this.friction;
 
-      this.x += this.vx
-      this.y += this.vy
+      this.x += this.vx;
+      this.y += this.vy;
 
-      ctx.fillStyle = this.color
-      ctx.beginPath()
-      ctx.arc(this.x, this.y, this.r, Math.PI * 2, false)
-      ctx.fill()
+      ctx.fillStyle = this.color;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, Math.PI * 2, false);
+      ctx.fill();
 
-      var a = this.x - mouse.x
-      var b = this.y - mouse.y
+      var a = this.x - mouse.x;
+      var b = this.y - mouse.y;
 
-      var distance = Math.sqrt(a * a + b * b)
+      var distance = Math.sqrt(a * a + b * b);
       if (distance < radius * 80) {
-        this.accX = (this.x - mouse.x) / 120
-        this.accY = (this.y - mouse.y) / 120
-        this.vx += this.accX
-        this.vy += this.accY
+        this.accX = (this.x - mouse.x) / 120;
+        this.accY = (this.y - mouse.y) / 120;
+        this.vx += this.accX;
+        this.vy += this.accY;
       }
+    };
+
+    function onMouseMove(e) {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
     }
 
-    function onMouseMove (e) {
-      mouse.x = e.clientX
-      mouse.y = e.clientY
-    }
-
-    function onTouchMove (e) {
+    function onTouchMove(e) {
       if (e.touches.length > 0) {
-        mouse.x = e.touches[0].clientX
-        mouse.y = e.touches[0].clientY
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
       }
     }
 
-    function onTouchEnd (e) {
-      mouse.x = -9999
-      mouse.y = -9999
+    function onTouchEnd(e) {
+      mouse.x = -9999;
+      mouse.y = -9999;
     }
 
-    function initScene () {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+    function initScene() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       if (window.innerWidth < 500) {
-        ctx.font = 'bold ' + ww / 7 + 'px sans-serif'
+        ctx.font = 'bold ' + ww / 7 + 'px sans-serif';
       } else {
-        ctx.font = 'bold ' + ww / 8 + 'px sans-serif'
+        ctx.font = 'bold ' + ww / 8 + 'px sans-serif';
       }
 
-      ctx.textAlign = 'center'
-      ctx.fillText('The Weather', ww / 2, wh / 2)
+      ctx.textAlign = 'center';
+      ctx.fillText('The Weather', ww / 2, wh / 2);
 
-      var data = ctx.getImageData(0, 0, ww, wh).data
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-      ctx.globalCompositeOperation = 'screen'
+      var data = ctx.getImageData(0, 0, ww, wh).data;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.globalCompositeOperation = 'screen';
 
-      particles = []
+      particles = [];
 
       if (window.innerWidth > 800) {
         for (var i = 0; i < ww; i += Math.round(ww / 300)) {
           for (var j = 0; j < wh; j += Math.round(ww / 300)) {
             if (data[(i + j * ww) * 4 + 3] > 150) {
-              particles.push(new Particle(i, j))
+              particles.push(new Particle(i, j));
             }
           }
         }
@@ -112,7 +112,7 @@ export default function MainAnimation () {
         for (var i = 0; i < ww; i += Math.round(ww / 200)) {
           for (var j = 0; j < wh; j += Math.round(ww / 200)) {
             if (data[(i + j * ww) * 4 + 3] > 150) {
-              particles.push(new Particle(i, j))
+              particles.push(new Particle(i, j));
             }
           }
         }
@@ -120,39 +120,39 @@ export default function MainAnimation () {
         for (var i = 0; i < ww; i += Math.round(ww / 150)) {
           for (var j = 0; j < wh; j += Math.round(ww / 150)) {
             if (data[(i + j * ww) * 4 + 3] > 150) {
-              particles.push(new Particle(i, j))
+              particles.push(new Particle(i, j));
             }
           }
         }
       }
 
-      amount = particles.length
+      amount = particles.length;
     }
 
-    function render (a) {
-      requestAnimationFrame(render)
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+    function render(a) {
+      requestAnimationFrame(render);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (var i = 0; i < amount; i++) {
-        particles[i].render()
+        particles[i].render();
       }
     }
 
-    window.addEventListener('mousemove', onMouseMove)
-    window.addEventListener('touchmove', onTouchMove)
-    window.addEventListener('touchend', onTouchEnd)
-    initScene()
-    requestAnimationFrame(render)
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('touchmove', onTouchMove);
+    window.addEventListener('touchend', onTouchEnd);
+    initScene();
+    requestAnimationFrame(render);
 
     return () => {
-      window.removeEventListener('mousemove', onMouseMove)
-      window.removeEventListener('touchmove', onTouchMove)
-      window.removeEventListener('touchend', onTouchEnd)
-    }
-  }, [])
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('touchmove', onTouchMove);
+      window.removeEventListener('touchend', onTouchEnd);
+    };
+  }, []);
 
   return (
     <>
-      <canvas id='scene' className='absolute bg-transparent'></canvas>
+      <canvas id="scene" className="absolute bg-transparent"></canvas>
     </>
-  )
+  );
 }
